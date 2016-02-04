@@ -15,7 +15,8 @@ class FreqList:
             cnt = 0
             for token in tokens(stream):
                 word = normalize(token)
-                if FREQLIST.freq(word) > 0:
+                f = FREQLIST.freq(word)
+                if f is not None and f > 0:
                     self.word_freq[word] = 1 + self.word_freq.get(word, 0)
                     cnt += 1
 
@@ -131,7 +132,7 @@ class SpokenFreqList(FreqList):  # freqlists/spoken.info
             rank += 1
 
 
-class MixedFreqList(FreqList):  # może mieć sumę częstości > 1
+class StatMixedFreqList(FreqList):  # może mieć sumę częstości > 1
     def __init__(self, flist_weights):
         self.words = []
         self.word_freq = dict()
@@ -156,6 +157,30 @@ class MixedFreqList(FreqList):  # może mieć sumę częstości > 1
         for (_, word) in freq_word:
             self.word_rank[word] = len(self.words)
             self.words.append(word)
+
+
+class DynMixedFreqList(FreqList):  # może mieć sumę częstości > 1
+    def __init__(self, flist_weights):
+        self.words = None
+        self.word_freq = None
+        self.word_rank = None
+
+        self.rank = None
+        self.word = None
+        self.dump = None
+
+        self.flist_weights = flist_weights
+
+    def freq(self, word):
+        s = 0.0
+        newf = 0.0
+        for (flist, w) in self.flist_weights:
+            f = flist.freq(word)
+            if f is not None:
+                s += w
+                newf += w * f
+        return newf / s
+
 
 FREQLIST = FreqList(filename='freqlist.p')
 

@@ -1,6 +1,7 @@
 import re
 import io
 
+
 def tokens(stream):
     word = ''
     while True:
@@ -96,10 +97,12 @@ def choose_stem(stems):
 
 
 def parse(stream):
+    words = []
     for token in tokens(stream):
         word = normalize(token)
         if word is not None:
-            yield word
+            words.append(word)
+    return list(set(words))
 
 if __name__ == '__main__':
     print([w for w in parse(io.StringIO('werq She often sdfsdfa speaks rqwrqw about Mary\'s fiancé.dasdasdas'))])
