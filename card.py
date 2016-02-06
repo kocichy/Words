@@ -10,7 +10,16 @@ from shutil import copyfile
 
 
 class Card:
+    '''
+    Klasa opisuje fiszkę.
+    '''
     def __init__(self, word):
+        '''
+        Konstruktor
+
+        :param word: angielskie słowo
+        :return: fiszka
+        '''
         self.ang = DICT.correct(word)
         self.pol = Card.__pol_str(self.ang)
 
@@ -28,6 +37,13 @@ class Card:
 
 
 def write_apkg(words, filename):
+    '''
+    Tworzy zbiór fiszek ze słów i zapisuje je do pliku w formacie APKG.
+
+    :param words: lista angielskich słów
+    :param filename: nazwa pliku do zapisu
+    :return: None
+    '''
     cards = [Card(word) for word in words]
     __cards_to_sql(cards, "temp/temp.sql")
     __sql_to_apkg('temp/temp.sql', 'temp/temp.apkg')

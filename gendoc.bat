@@ -1,0 +1,1 @@
+sphinx-apidoc -F -o doc . && make html

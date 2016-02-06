@@ -28,15 +28,5 @@ class SelectorTest(unittest.TestCase):
         self.db.con.close()
         os.remove(self.dbfilename)
 
-    def test_get_pr_func(self):
-        pr = selector.get_pr_func(db=self.db, fl=self.fl, max_=6, step=2)
-        self.assertEqual(pr('a'), 1.0)
-        self.assertEqual(pr('b'), 1.0)
-        self.assertEqual(pr('c'), 0.75)
-        self.assertEqual(pr('d'), 0.5)
-        self.assertEqual(pr('e'), 0.4)
-        self.assertEqual(pr('f'), 0.3)
-        self.assertEqual(pr('g'), 0.01)
-
 if __name__ == '__main__':
     unittest.main()

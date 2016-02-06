@@ -12,7 +12,7 @@ import datetime
 TEST_SIZE = 100
 MAX_RANK = 15000
 
-MEAN_VAL = None
+UTILITY_FUNC = None
 PR = None
 
 WORDS_TO_LEARN = None
@@ -24,8 +24,15 @@ WORDS = None
 TO_LEARN = None
 
 
-def survey(words, to_learn):
-    global MEAN_VAL, PR, INDEX, LEN, WORDS_TO_LEARN, WORDS, TO_LEARN
+def init_survey(words, to_learn):
+    '''
+    Rozpoczyna odpytywanie użytkownika, czy zna dane słowa.
+
+    :param words: lista słów
+    :param to_learn: czy słowa zostaną potem nauczone
+    :return: None
+    '''
+    global UTILITY_FUNC, PR, INDEX, LEN, WORDS_TO_LEARN, WORDS, TO_LEARN
 
     filemenu.entryconfig("Open", state="disabled")
     filemenu.entryconfig("Test vocabulary", state="disabled")
@@ -34,7 +41,7 @@ def survey(words, to_learn):
     btn_easy['state'] = 'normal'
     btn_hard['state'] = 'normal'
 
-    MEAN_VAL = selector.get_mean_val(fl=FREQLIST)
+    UTILITY_FUNC = selector.get_utility_func(fl=FREQLIST)
     PR = selector.get_pr_func()
 
     WORDS_TO_LEARN = []
@@ -49,7 +56,11 @@ def survey(words, to_learn):
 
 
 def next_word():
-    global MEAN_VAL, PR, INDEX, LEN, WORDS, TO_LEARN, WORDS_TO_LEARN
+    '''
+    Pokazuje następne słowo do nauczenia.
+    :return: None
+    '''
+    global UTILITY_FUNC, PR, INDEX, LEN, WORDS, TO_LEARN, WORDS_TO_LEARN
 
     INDEX += 1
 
@@ -62,7 +73,7 @@ def next_word():
         STAT_STR.set("%d/%d" % (INDEX + 1, LEN))
         WORDINFO_STR.set(
                 "rank = %d, p = %f, frequency = %f, value = %f" %
-                (FREQLIST.rank(word), PR(word), FREQLIST.freq(word), MEAN_VAL(word)))
+                (FREQLIST.rank(word), PR(word), FREQLIST.freq(word), UTILITY_FUNC(word)))
     else:
         WORD_STR.set('')
         STAT_STR.set('')
@@ -89,6 +100,15 @@ def next_word():
 
 
 def random_unknown_word(x, y, max_a):
+    '''
+    Zwraca losowe nieznane użytkownikowi słowo na liście frekwencyjnej z przedziału [x, y).\n
+    Gdy ciężko takie słowo wylosować zwracane jest jakieś zupełnie losowe słowo.
+
+    :param x: lewy kraniec przedziału
+    :param y: prawy koniec przedziału
+    :param max_a: maksymalna ilość prób wylosowania słowa z przedziału [x, y)
+    :return: losowe nieznane użytkownikowi słowo na liście frekwencyjnej z przedziału [x, y)
+    '''
     a = 0
     word = None
     while max_a is None or a < max_a:
@@ -102,7 +122,12 @@ def random_unknown_word(x, y, max_a):
     return word
 
 
-def test_vocab():
+def init_test_vocab():
+    '''
+    Rozpoczyna odpytywanie użytkownika z losowych słów.
+
+    :return: None
+    '''
     step = MAX_RANK // TEST_SIZE
 
     words = []
@@ -114,19 +139,29 @@ def test_vocab():
         words.append(word)
         i += 1
 
-    survey(words, False)
+    init_survey(words, False)
 
 
 def openfile():
+    '''
+    Obsługa kliknięcia "Open file". Otwiera plik z angielskim tekstem i rozpoczyna ankietę.
+
+    :return: None
+    '''
     homedir = expanduser("~")
     filename = askopenfilename(initialdir=homedir + "/Desktop", title="Choose text file")
     if filename:
         with open(filename, 'r') as fh:
             words = selector.select(fh)
-            survey(words, True)
+            init_survey(words, True)
 
 
 def hard_clicked():
+    '''
+    Obsługa kliknięcia w przycisk "Hard".
+
+    :return: None
+    '''
     if 0 <= INDEX < LEN:
         word = WORDS[INDEX]
         DATABASE.modify_word(word, FREQLIST.rank(word), False, False)
@@ -136,6 +171,11 @@ def hard_clicked():
 
 
 def easy_clicked():
+    '''
+    Obsługa kliknięcia w przycisk "Easy".
+
+    :return: None
+    '''
     if 0 <= INDEX < LEN:
         word = WORDS[INDEX]
         DATABASE.modify_word(word, FREQLIST.rank(word), True, True)
@@ -143,12 +183,22 @@ def easy_clicked():
 
 
 def clear_db():
+    '''
+    Obsługa kliknięcia "Estimate vocabulary size". Szacuje liczbę słów znaną przez użytkownika.
+
+    :return: None
+    '''
     ans = messagebox.askyesno("", "Are you sure you want to clear info about user?")
     if ans:
         DATABASE.clear()
 
 
 def estimate_vocab():
+    '''
+    Obsługa kliknięcia "Clear info about user". Szacuje liczbę słów znaną przez użytkownika.
+
+    :return: None
+    '''
     pr = selector.get_pr_func()
     s = 0.0
     for i in range(0, 50000):
@@ -164,7 +214,7 @@ root.geometry("480x320")
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Open", command=openfile)
-filemenu.add_command(label="Test vocabulary", command=test_vocab)
+filemenu.add_command(label="Test vocabulary", command=init_test_vocab)
 filemenu.add_command(label="Clear info about user", command=clear_db)
 filemenu.add_command(label="Estimate vocabulary size", command=estimate_vocab)
 menubar.add_cascade(label="File", menu=filemenu)

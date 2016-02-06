@@ -10,6 +10,14 @@ EPS = 0.01
 
 
 def get_pr_func(db=DATABASE, max_=MAX, step=STEP):
+    '''
+    Zwraca funkcję, która przyporządokwuje ang. słowu szacowane prawdopodobieństwo znania tego słowa.
+
+    :param db: baza danych zawierająca informacje o słownictwie użytkownika
+    :param max_: maks. pozycja na liście frekwencyjnej słów branych pod uwagę
+    :param step: dł. przedziału, na jakim jest szacowane prawdopodobieństwo
+    :return: funkcja, która przyporządokwuje ang. słowu szacowane prawdopodobieństwo znania tego słowa
+    '''
     rank_prob = [(-step // 2, 1.0)]
     rank = 0
     while rank + step <= max_:
@@ -41,29 +49,43 @@ def get_pr_func(db=DATABASE, max_=MAX, step=STEP):
     return pr_func
 
 
-def get_mean_val(db=DATABASE, fl=freqlist.FREQLIST):
+def get_utility_func(db=DATABASE, fl=freqlist.FREQLIST):
+    '''
+    Zwraca funkcję użyteczności, która przyporządkowuje słowu jego wartość.
+
+    :param db: baza danych zawierająca informacje o słownictwie użytkownika
+    :param fl: lista frekwencyjna
+    :return: funkcja użyteczności, która przyporządkowuje słowu jego wartość
+    '''
     pr = get_pr_func(db=db)
     C = 11.2
 
-    def mean_val(word):
+    def utility_func(word):
         f = fl.freq(word)
         p = 1.0 - pr(word)
         # print((word, f, p))
         return (log(C+f) - log(C)) * exp(C*p)
 
-    return mean_val
+    return utility_func
 
 
 def select(stream, db=DATABASE):
+    '''
+    Zwraca listę słów posortowanych według wartości funkcji użyteczności dla podanego strumienia znakowego.
+
+    :param stream: strumień znakowy
+    :param db: baza danych zawierająca informacje o słownictwie użytkownika
+    :return: lista słów posortowanych według wartości funkcji użyteczności
+    '''
     words = myparser.parse(stream)
     temp_fl = freqlist.FreqList(stream=stream)
     fl = freqlist.DynMixedFreqList([(freqlist.FREQLIST, 0.5), (temp_fl, 0.5)])
-    mean_val = get_mean_val(db=db, fl=fl)
+    utility_fun = get_utility_func(db=db, fl=fl)
     pr = get_pr_func(db=db)
     mean_word = []
     for word in words:
         if DICT.correct(word) is not None and DATABASE.known_now(word) == False:
-            mean_word.append((mean_val(word), word, pr(word), ))
+            mean_word.append((utility_fun(word), word, pr(word), ))
     mean_word.sort(reverse=True)
     # print(mean_word)
     return [word for (_, word, _) in mean_word]

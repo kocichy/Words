@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test_myparser module &mdash; Words 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Words 1 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Words 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-test_myparser">
+<span id="test-myparser-module"></span><h1>test_myparser module<a class="headerlink" href="#module-test_myparser" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="test_myparser.ChooseStemTest">
+<em class="property">class </em><code class="descclassname">test_myparser.</code><code class="descname">ChooseStemTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.ChooseStemTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="attribute">
+<dt id="test_myparser.ChooseStemTest.inouts">
+<code class="descname">inouts</code><em class="property"> = [(['mov', 'move', 'moved'], 'move'), (['ask', 'aske', 'asked'], 'ask'), (['cri', 'crie', 'cried', 'cry'], 'cried'), (['play', 'playing'], 'play'), (['get', 'gett', 'getting'], 'get'), (['stop', 'stopp', 'stoppe', 'stopped'], 'stop'), (['miss', 'misse', 'misses'], 'miss'), (['giv', 'give', 'gives'], 'give')]</em><a class="headerlink" href="#test_myparser.ChooseStemTest.inouts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="test_myparser.ChooseStemTest.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.ChooseStemTest.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test_myparser.NormalizeTest">
+<em class="property">class </em><code class="descclassname">test_myparser.</code><code class="descname">NormalizeTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.NormalizeTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="attribute">
+<dt id="test_myparser.NormalizeTest.inouts">
+<code class="descname">inouts</code><em class="property"> = [('Getting', 'get'), ('LEAVES', 'leave'), ('mOvEd', 'move'), ('fIAncé', 'fiancé'), ('SPeaks', 'speak'), ('DROPPED', 'drop')]</em><a class="headerlink" href="#test_myparser.NormalizeTest.inouts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="test_myparser.NormalizeTest.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.NormalizeTest.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test_myparser.PossibleStemsTest">
+<em class="property">class </em><code class="descclassname">test_myparser.</code><code class="descname">PossibleStemsTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.PossibleStemsTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="attribute">
+<dt id="test_myparser.PossibleStemsTest.inouts">
+<code class="descname">inouts</code><em class="property"> = [('moved', ['mov', 'move', 'moved']), ('asked', ['ask', 'aske', 'asked']), ('cried', ['cri', 'crie', 'cried', 'cry']), ('playing', ['play', 'playing']), ('getting', ['get', 'gett', 'getting']), ('stopped', ['stop', 'stopp', 'stoppe', 'stopped']), ('misses', ['miss', 'misse', 'misses']), ('gives', ['giv', 'give', 'gives'])]</em><a class="headerlink" href="#test_myparser.PossibleStemsTest.inouts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="test_myparser.PossibleStemsTest.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.PossibleStemsTest.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="test_myparser.TokensTest">
+<em class="property">class </em><code class="descclassname">test_myparser.</code><code class="descname">TokensTest</code><span class="sig-paren">(</span><em>methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.TokensTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">unittest.case.TestCase</span></code></p>
+<dl class="attribute">
+<dt id="test_myparser.TokensTest.inouts">
+<code class="descname">inouts</code><em class="property"> = [('_a__bb__cc__ddd__', ['a', 'bb', 'cc', 'ddd']), ('aaa___bbb', ['aaa', 'bbb']), ('Pójdźże, kiń tę chmurność w głąb flaszy!', ['Pójdźże', 'kiń', 'tę', 'chmurność', 'w', 'głąb', 'flaszy'])]</em><a class="headerlink" href="#test_myparser.TokensTest.inouts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="test_myparser.TokensTest.test">
+<code class="descname">test</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#test_myparser.TokensTest.test" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/doc/test_myparser.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Words 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Konrad.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+    </div>
+  </body>
+</html>

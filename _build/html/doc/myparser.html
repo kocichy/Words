@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>myparser module &mdash; Words 1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Words 1 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Words 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-myparser">
+<span id="myparser-module"></span><h1>myparser module<a class="headerlink" href="#module-myparser" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="myparser.Rule">
+<em class="property">class </em><code class="descclassname">myparser.</code><code class="descname">Rule</code><span class="sig-paren">(</span><em>pattern</em>, <em>suffix</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.Rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Klasa opisująca zasadę gramatyczną używaną do odgadnięcia tematu słowa.</p>
+<p>Np. &#8220;moved&#8221; -&gt; &#8220;move&#8221;.</p>
+<dl class="method">
+<dt id="myparser.Rule.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>pattern</em>, <em>suffix</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.Rule.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Konstruktor</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pattern</strong> &#8211; wzorzec jako wyrażenie regularne</li>
+<li><strong>suffix</strong> &#8211; doklejany sufiks do przypasowanej we wzorcu grupy</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="myparser.Rule.get_stem">
+<code class="descname">get_stem</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.Rule.get_stem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stusuje na słowie regułę i zwraca możliwy temat.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>word</strong> &#8211; ang. słowo</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">temat lub None, jeśli reguła nie pasuje do słowa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myparser.RuleXXed">
+<em class="property">class </em><code class="descclassname">myparser.</code><code class="descname">RuleXXed</code><a class="headerlink" href="#myparser.RuleXXed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Reguła &#8220;stopped -&gt; stop&#8221;</p>
+<dl class="method">
+<dt id="myparser.RuleXXed.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#myparser.RuleXXed.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="myparser.RuleXXed.get_stem">
+<code class="descname">get_stem</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.RuleXXed.get_stem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stusuje na słowie regułę i zwraca możliwy temat.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>word</strong> &#8211; ang. słowo</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">temat lub None, jeśli reguła nie pasuje do słowa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myparser.RuleXXing">
+<em class="property">class </em><code class="descclassname">myparser.</code><code class="descname">RuleXXing</code><a class="headerlink" href="#myparser.RuleXXing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Reguła &#8220;getting -&gt; get&#8221;</p>
+<dl class="method">
+<dt id="myparser.RuleXXing.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#myparser.RuleXXing.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="myparser.RuleXXing.get_stem">
+<code class="descname">get_stem</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.RuleXXing.get_stem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stusuje na słowie regułę i zwraca możliwy temat.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>word</strong> &#8211; ang. słowo</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">temat lub None, jeśli reguła nie pasuje do słowa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="myparser.choose_stem">
+<code class="descclassname">myparser.</code><code class="descname">choose_stem</code><span class="sig-paren">(</span><em>stems</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.choose_stem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dla listy potencjalnych tematów wybiera najbardziej prawdopodobny temat (najczęstszy).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stems</strong> &#8211; lista potencjalncych tematów</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">najczęściej spotykany w języku temat</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="myparser.normalize">
+<code class="descclassname">myparser.</code><code class="descname">normalize</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Złożenie choose_stem(possible_stems(s.lower()))</p>
+<p>Dla argumentu:</p>
+<ol class="arabic simple">
+<li>Zamienia wielkie na małe litery.</li>
+<li>Tworzy listę potencjalnych tematów.</li>
+<li>Wybiera najczęstszy temat patrząc na listę frekwencyjną.</li>
+</ol>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> &#8211; słowo</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">temat słowa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="myparser.parse">
+<code class="descclassname">myparser.</code><code class="descname">parse</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dla danego strumienia znakowego zwraca listę tematów występujących w nim słów.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong> &#8211; strumień znakowy</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">lista tematów</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="myparser.possible_stems">
+<code class="descclassname">myparser.</code><code class="descname">possible_stems</code><span class="sig-paren">(</span><em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.possible_stems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Próbuje stosować reguły gramatyczne do argumentu i tworzy listę potencjalnych tematów.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>w</strong> &#8211; ang. słowo</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">lista możliwych tematów słowa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="myparser.tokens">
+<code class="descclassname">myparser.</code><code class="descname">tokens</code><span class="sig-paren">(</span><em>stream</em><span class="sig-paren">)</span><a class="headerlink" href="#myparser.tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca słowa (spójne ciągi liter) w strumieniu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stream</strong> &#8211; strumień znakowy</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">słowa (spójne ciągi liter) w strumieniu (generator)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/doc/myparser.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Words 1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Konrad.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.5.
+    </div>
+  </body>
+</html>

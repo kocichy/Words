@@ -5,7 +5,15 @@ FILENAME = 'dicts/angielsko-polski.txt'
 
 
 class Dict:
-    def __init__(self, new=False):
+    '''
+    Klasa opisująca WIELKI SŁOWNIK ANGIELSKO-POLSKI V.07.2011 (http://www.slowniki.org.pl/eng.html)
+    '''
+    def __init__(self):
+        '''
+        Tworzy słownik z pliku.
+
+        :return: obiekty typu Dict
+        '''
         self.__bad_good = dict()
         self.__ang_pol = dict()
 
@@ -32,15 +40,33 @@ class Dict:
                 self.__ang_pol[ang] = pols
 
     def correct(self, word):
+        '''
+        Poprawia ang. słowo (np. z "tom" na "Tom").
+
+        :param word: ang. słowo
+        :return: poprawione ang. słowo
+        '''
         return self.__bad_good.get(word.lower(), None)
 
     def pol(self, ang):
+        '''
+        Zwraca polskie tłumaczenie angielskiego słowa.
+
+        :param ang: ang. słowo
+        :return: pol. słowo
+        '''
         cor = self.correct(ang)
         if cor is None:
             return None
         return self.__ang_pol.get(cor, None)
 
     def exists(self, ang):
+        '''
+        Sprawdza, czy słowo istnieje w słowniku.
+
+        :param ang: ang. słowo
+        :return: czy słowo istnieje w słowniku
+        '''
         return self.correct(ang) is not None
 
 DICT = Dict()
