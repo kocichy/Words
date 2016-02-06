@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100cd325-e9a9-437e-ab22-a95cb8f0066f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myparser.py" afterPath="$PROJECT_DIR$/myparser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_myparser.py" afterPath="$PROJECT_DIR$/test_myparser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/spoken.info" afterPath="$PROJECT_DIR$/freqlists/spoken.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/ngsl.list" afterPath="$PROJECT_DIR$/freqlists/ngsl.list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/spoken.list" afterPath="$PROJECT_DIR$/freqlists/spoken.list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlist.py" afterPath="$PROJECT_DIR$/freqlist.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_myparser.py" afterPath="$PROJECT_DIR$/test_myparser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/opensubtitles.list" afterPath="$PROJECT_DIR$/freqlists/opensubtitles.list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_freqlist.py" afterPath="$PROJECT_DIR$/test_freqlist.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/pg.list" afterPath="$PROJECT_DIR$/freqlists/pg.list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/spoken.list" afterPath="$PROJECT_DIR$/freqlists/spoken.list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/spoken.info" afterPath="$PROJECT_DIR$/freqlists/spoken.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/pg.info" afterPath="$PROJECT_DIR$/freqlists/pg.info" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/opensubtitles.info" afterPath="$PROJECT_DIR$/freqlists/opensubtitles.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/opensubtitles.list" afterPath="$PROJECT_DIR$/freqlists/opensubtitles.list" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/pg.info" afterPath="$PROJECT_DIR$/freqlists/pg.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_freqlist.py" afterPath="$PROJECT_DIR$/test_freqlist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myparser.py" afterPath="$PROJECT_DIR$/myparser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Konrad.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Konrad.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/ngsl.info" afterPath="$PROJECT_DIR$/freqlists/ngsl.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/ngsl.list" afterPath="$PROJECT_DIR$/freqlists/ngsl.list" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/ngsl.info" afterPath="$PROJECT_DIR$/freqlists/ngsl.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/freqlists/pg.list" afterPath="$PROJECT_DIR$/freqlists/pg.list" />
     </list>
     <ignored path="Words.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,20 +43,42 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <caret line="241" column="51" selection-start-line="241" selection-start-column="51" selection-end-line="241" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selector.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/selector.py">
+      <file leaf-file-name="freqlist.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/freqlist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5912596">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.52112675">
+              <caret line="320" column="40" selection-start-line="320" selection-start-column="40" selection-end-line="320" selection-end-column="40" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dict.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="99" column="6" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_dict.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_dict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,12 +123,13 @@
         <option value="$PROJECT_DIR$/conf.py" />
         <option value="$PROJECT_DIR$/card.py" />
         <option value="$PROJECT_DIR$/database.py" />
-        <option value="$PROJECT_DIR$/dict.py" />
-        <option value="$PROJECT_DIR$/freqlist.py" />
         <option value="$PROJECT_DIR$/test_selector.py" />
         <option value="$PROJECT_DIR$/myparser.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/selector.py" />
+        <option value="$PROJECT_DIR$/test_freqlist.py" />
+        <option value="$PROJECT_DIR$/dict.py" />
+        <option value="$PROJECT_DIR$/freqlist.py" />
       </list>
     </option>
   </component>
@@ -163,7 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,9 +205,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="freqlist.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Words" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="freqlist.py" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FreqList" />
+              <option name="myItemType" value="com.jetbrains.python.projectView.PyElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,7 +253,7 @@
       <recent name="C:\Users\Konrad\Desktop\Dzielone\Words\tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in Words">
+  <component name="RunManager" selected="Python.main">
     <configuration default="false" name="Unittests in Words" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -214,6 +269,79 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
       <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="freqlist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Words" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/freqlist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Words" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Words" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_dict" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Users\Konrad\AppData\Local\Programs\Python\Python35\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Words" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_dict.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -363,12 +491,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in Words" />
+      <item index="1" class="java.lang.String" itemvalue="Python.freqlist" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dict" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_dict" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in Words" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in Words" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_dict" />
+        <item index="3" class="java.lang.String" itemvalue="Python.dict" />
+        <item index="4" class="java.lang.String" itemvalue="Python.freqlist" />
       </list>
     </recent_temporary>
   </component>
@@ -386,35 +522,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_DictTest_test_DICT - 2016.02.02 at 20h 39m 19s.xml">
-      <configuration name="Unittest DictTest.test_DICT" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_DictTest_test_DICT - 2016.02.02 at 20h 42m 30s.xml">
-      <configuration name="Unittest DictTest.test_DICT" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_DictTest_test_DICT - 2016.02.02 at 20h 42m 54s.xml">
-      <configuration name="Unittest DictTest.test_DICT" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.02 at 20h 43m 21s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 44m 08s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.05 at 23h 52m 43s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 56m 18s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.05 at 23h 53m 33s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 57m 00s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.06 at 10h 23m 56s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 57m 17s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.06 at 11h 53m 32s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 58m 12s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words - 2016.02.06 at 12h 49m 42s.xml">
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 15h 59m 04s.xml">
       <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_Words_(1) - 2016.02.02 at 20h 45m 13s.xml">
-      <configuration name="Unittests in Words (1)" configurationId="tests" />
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 16h 01m 24s.xml">
+      <configuration name="Unittests in Words" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 16h 12m 48s.xml">
+      <configuration name="Unittests in Words" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 16h 13m 26s.xml">
+      <configuration name="Unittests in Words" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_Words - 2016.02.06 at 16h 34m 59s.xml">
+      <configuration name="Unittests in Words" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -423,11 +559,10 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54572713" sideWeight="0.50625" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27286357" sideWeight="0.509375" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3748126" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42578712" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29685158" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -437,6 +572,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -700,20 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_freqlist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="35" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -782,22 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4755784">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/freqlist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="263" column="30" selection-start-line="263" selection-start-column="30" selection-end-line="263" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_selector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6651017">
@@ -810,7 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="23" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,17 +930,55 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <caret line="241" column="51" selection-start-line="241" selection-start-column="51" selection-end-line="241" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_freqlist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04225352">
+          <caret line="76" column="51" selection-start-line="76" selection-start-column="51" selection-end-line="76" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5912596">
-          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state vertical-scroll-proportion="-0.25915492">
+          <caret line="57" column="76" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="6" selection-start-line="99" selection-start-column="6" selection-end-line="99" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freqlist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52112675">
+          <caret line="320" column="40" selection-start-line="320" selection-start-column="40" selection-end-line="320" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

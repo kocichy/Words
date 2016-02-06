@@ -1,4 +1,6 @@
 import re
+import time
+import threading
 
 
 FILENAME = 'dicts/angielsko-polski.txt'
@@ -10,9 +12,17 @@ class Dict:
     '''
     def __init__(self):
         '''
-        Tworzy słownik z pliku.
+        Tworzy pusty słownik z pliku.
 
         :return: obiekty typu Dict
+        '''
+        self.ready = False
+
+    def load(self):
+        '''
+        Ładuje nowy słownik z pliku.
+
+        :return: None
         '''
         self.__bad_good = dict()
         self.__ang_pol = dict()
@@ -38,6 +48,16 @@ class Dict:
                     pols = []
                 pols.append(pol)
                 self.__ang_pol[ang] = pols
+        self.ready = True
+
+    def wait(self):
+        '''
+        Czeka dopóki słownik nie jest gotowy.
+
+        :return: None
+        '''
+        while not self.ready:
+            pass
 
     def correct(self, word):
         '''
@@ -46,6 +66,7 @@ class Dict:
         :param word: ang. słowo
         :return: poprawione ang. słowo
         '''
+        self.wait()
         return self.__bad_good.get(word.lower(), None)
 
     def pol(self, ang):
@@ -55,6 +76,7 @@ class Dict:
         :param ang: ang. słowo
         :return: pol. słowo
         '''
+        self.wait()
         cor = self.correct(ang)
         if cor is None:
             return None
@@ -67,6 +89,23 @@ class Dict:
         :param ang: ang. słowo
         :return: czy słowo istnieje w słowniku
         '''
+        self.wait()
         return self.correct(ang) is not None
 
+
 DICT = Dict()
+
+
+def threaded_load():
+    # print("Loading the dictionary...")
+    start = time.time()
+    DICT.load()
+    end = time.time()
+    # print("The dictionary has been loaded in %f s" % (end - start))
+
+thread = threading.Thread(target=threaded_load)
+thread.start()
+
+
+
+

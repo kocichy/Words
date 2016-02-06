@@ -1,17 +1,26 @@
 import pickle
+import time
+import threading
 
 
 class FreqList:
     '''
     Klasa opisuje listę frekwencyjną.
     '''
-    def __init__(self, filename=None, stream=None):
+    def __init__(self):
         '''
-        Tworzy listę frekwenycjną z pliku korzystając z pickle.load() lub samemu zliczając słowa w strumieniu.
+        Tworzy pustą listę frekwencyjną, której nie można używać.
+        '''
+        self.words, self.word_freq, self.word_rank = list(), dict(), dict()
+        self.ready = False
+
+    def load(self, filename=None, stream=None):
+        '''
+        Ładuje listę frekwenycjną z pliku korzystając z pickle.load() lub samemu zliczając słowa w strumieniu.
 
         :param filename: plik .p (pickle), gdzie znajduje się opis listy frekwencyjnej
         :param stream: strumień znaków, jeśli filename to None, wtedy lista frekwencyjna jest tworzona ze strumienia
-        :return:
+        :return: None
         '''
         if filename is not None:
             self.words, self.word_freq, self.word_rank = pickle.load(open(filename, 'rb'))
@@ -40,6 +49,17 @@ class FreqList:
         else:
             self.words, self.word_freq, self.word_rank = list(), dict(), dict()
 
+        self.ready = True;
+
+    def wait(self):
+        '''
+        Czeka dopóki lista frekwencyjna nie jest gotowa.
+
+        :return: None
+        '''
+        while not self.ready:
+            pass
+
     def freq(self, word):
         '''
         Zwraca częstość słowa.
@@ -47,6 +67,7 @@ class FreqList:
         :param word: słowo angielskie
         :return: częstość słowa
         '''
+        self.wait()
         return self.word_freq.get(word, None)
 
     def rank(self, word):
@@ -56,6 +77,7 @@ class FreqList:
         :param word: ang. słowo
         :return: pozycja na liście frekwencyjnej
         '''
+        self.wait()
         return self.word_rank.get(word, None)
 
     def word(self, rank):
@@ -65,6 +87,7 @@ class FreqList:
         :param rank: pozycja na liście frekwencyjnej
         :return: słowo
         '''
+        self.wait()
         if rank >= len(self.words):
             return None
         return self.words[rank]
@@ -76,6 +99,7 @@ class FreqList:
         :param filename: nazwa pliku
         :return: None
         '''
+        self.wait()
         pickle.dump((self.words, self.word_freq, self.word_rank), open(filename, 'wb'))
 
 
@@ -107,6 +131,7 @@ class PGFreqList(FreqList):
             self.word_rank[word] = rank
             rank += 1
 
+        self.ready = True
 
 class OSFreqList(FreqList):
     '''
@@ -143,6 +168,8 @@ class OSFreqList(FreqList):
             self.word_freq[word] = cnt / sum_
             self.word_rank[word] = rank
 
+        self.ready = True
+
 
 class NGSLFreqList(FreqList):
     '''
@@ -168,6 +195,8 @@ class NGSLFreqList(FreqList):
             self.word_rank[word] = rank
             rank += 1
 
+        self.ready = True
+
 
 class SpokenFreqList(FreqList):
     '''
@@ -192,6 +221,8 @@ class SpokenFreqList(FreqList):
             self.word_freq[word] = float(row[1])
             self.word_rank[word] = rank
             rank += 1
+
+        self.ready = True
 
 
 class StatMixedFreqList(FreqList):
@@ -232,6 +263,8 @@ class StatMixedFreqList(FreqList):
             self.word_rank[word] = len(self.words)
             self.words.append(word)
 
+        self.ready = True
+
 
 class DynMixedFreqList(FreqList):
     '''
@@ -259,6 +292,8 @@ class DynMixedFreqList(FreqList):
 
         self.flist_weights = flist_weights
 
+        self.ready = True
+
     def freq(self, word):
         '''
         Zwraca częstość słowa.
@@ -266,6 +301,7 @@ class DynMixedFreqList(FreqList):
         :param word: słowo angielskie
         :return: częstość słowa
         '''
+        self.wait()
         s = 0.0
         newf = 0.0
         for (flist, w) in self.flist_weights:
@@ -276,8 +312,15 @@ class DynMixedFreqList(FreqList):
         return newf / s
 
 
-FREQLIST = FreqList(filename='freqlist.p')
+FREQLIST = FreqList()
 
-if __name__ == '__main__':
-    print(FREQLIST.rank('cry'))
-    print(FREQLIST.rank('cried'))
+
+def threaded_load():
+    # print("Loading the frequency list...")
+    start = time.time()
+    FREQLIST.load(filename='freqlist.p')
+    end = time.time()
+    # print("The frequency list has been loaded in %f s" % (end - start))
+
+thread = threading.Thread(target=threaded_load)
+thread.start()

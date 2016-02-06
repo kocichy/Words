@@ -73,7 +73,8 @@ class SpokenFreqListTest(unittest.TestCase):
 
 class FreqListTest(unittest.TestCase):
     def test_init_from_stream(self):
-        fl = freqlist.FreqList(stream=io.StringIO(' a.A.a-i-I-b'))
+        fl = freqlist.FreqList()
+        fl.load(stream=io.StringIO(' a.A.a-i-I-b'))
 
         self.assertEqual(fl.word(0), 'a')
         self.assertEqual(fl.word(2), 'b')
