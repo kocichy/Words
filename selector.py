@@ -78,7 +78,8 @@ def select(stream, db=DATABASE):
     :return: lista słów posortowanych według wartości funkcji użyteczności
     '''
     words = myparser.parse(stream)
-    temp_fl = freqlist.FreqList(stream=stream)
+    temp_fl = freqlist.FreqList()
+    temp_fl.load(stream=stream)
     fl = freqlist.DynMixedFreqList([(freqlist.FREQLIST, 0.5), (temp_fl, 0.5)])
     utility_fun = get_utility_func(db=db, fl=fl)
     pr = get_pr_func(db=db)
